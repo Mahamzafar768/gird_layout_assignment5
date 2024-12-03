@@ -1,101 +1,64 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function GridLayout() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-yellow-100 p-4">
+      {/* Main Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-4">
+        
+        {/* AG1 - Left Side */}
+        <div className="col-span-1 rounded-md md:col-span-2 lg:col-span-2 bg-teal-400 flex items-center justify-center text-white font-bold h-[900px]">
+          AG1 <br /> 2 of 10
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Middle Content - 6 of 10 width */}
+        <div className="col-span-1 md:col-span-2 lg:col-span-6 grid grid-rows-6 gap-0">
+          {/* AG2 */}
+          <div className="bg-yellow-300 flex items-center justify-center text-black font-bold min-h-[150px] rounded-md">
+            AG2 <br /> 6 of 10
+          </div>
+
+          {/* AG4 and AG5 - 50% Width each */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+            <div className="bg-pink-300 flex items-center justify-center text-black font-bold min-h-[150px]">
+              AG4 <br /> 3 of 6
+            </div>
+            <div className="bg-red-300 flex items-center justify-center text-white font-bold min-h-[150px]">
+              AG5 <br /> 3 of 6 (omega) 
+            </div>
+          </div>
+
+          {/* AG6 and AG7 in the same row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-blue-700">
+              
+            {/* AG6 */}
+            <div className="bg-orange-300 flex items-center justify-center text-black font-bold min-h-[300px]">
+              AG6 <br /> 2 of 6
+            </div>
+
+            {/* AG7 */}
+            <div className="bg-yellow-400 flex flex-col gap-4 text-black font-bold min-h-[300px] ">
+              {/* AG8 and AG9 */}
+              <div className="flex gap-4">
+                <div className="flex-1 bg-pink-200 flex items-center justify-center min-h-[100px] ">
+                  AG8 <br /> 2 of 8
+                </div>
+                <div className="flex-1 bg-pink-200 flex items-center justify-center min-h-[100px] ">
+                  AG9 <br /> 2 of 4
+                </div>
+              </div>
+
+              {/* AG10 */}
+              <div className="bg-purple-200 flex items-center justify-center min-h-[100px]  rounded-md">
+                AG10 <br /> auto
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* AG3 - Right Side */}
+        <div className="rounded-md col-span-1 md:col-span-2 lg:col-span-2 bg-teal-400 flex items-center justify-center text-white font-bold h-[900px]">
+          AG3 <br /> 2 of 10 (omega)
+        </div>
+      </div>
     </div>
   );
 }
